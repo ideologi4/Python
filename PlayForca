@@ -1,0 +1,35 @@
+import random
+palavras = ["guerrafria", "bozo", "rambo", "avançotecnologico", "menudo", "acavernadodragão"]
+palavra= random.choice(palavras)
+tentativas= 0
+chances= (len(palavra)+2)
+letras_escolhidas= []
+estado_atual = ['_']*len(palavra)
+
+print("\n🅱🅴🅼-🆅🅸🅽🅳🅾 🅰🅾 🅹🅾🅶🅾 🅳🅰 🅵🅾🆁🅲🅰 (🆂🅴🅼 🅵🅾🆁🅲🅰)!")
+print("    𝙨𝙚𝙪 𝙤𝙗𝙟𝙚𝙩𝙞𝙫𝙤 é 𝙩𝙚𝙣𝙩𝙖𝙧 𝙖𝙘𝙚𝙧𝙩𝙖𝙧 𝙖 𝙥𝙖𝙡𝙖𝙫𝙧𝙖 𝙨𝙚𝙘𝙧𝙚𝙩𝙖!   ")
+print("           𝐭𝐞𝐦á𝐭𝐢𝐜𝐚 𝐝𝐨 𝐣𝐨𝐠𝐨: 𝐀𝐍𝐎𝐒 𝟖𝟎!         \n")
+print("você so podera tentar uma letra por vez, caso você erre, seu numero de tentativas irá diminuir.")
+print("Se você formar a palavra antes do tempo: digite (.) nas proximas opções.")
+for x in range (chances):
+    letra =(input(str("\n𝐞𝐬𝐜𝐨𝐥𝐡𝐚 𝐮𝐦𝐚 𝐥𝐞𝐭𝐫𝐚:")))
+    letras_escolhidas.append(letra)
+    for i in range(len(palavra)):
+        if letra == palavra[i]:
+            estado_atual[i] = letra
+    if letra in palavra:
+        print("\nparabens, voce acertou a letra!")
+    else:
+        print("\nque pena, voce errou!")
+        tentativas += 1
+    print("voce tem:", (chances - tentativas), "tentativas\n")
+
+    print(estado_atual)
+    print("\nletras escolhidas anteriormente:", letras_escolhidas)
+for y in range (len(palavra)+2):
+    if palavra and (".") in letras_escolhidas:
+        print ("\n🅲🅾🅽🅶🆁🅰🆃🆄🅻🅰🆃🅸🅾🅽🆂!!!, 🆅🅾🅲ê 🅶🅰🅽🅷🅾🆄 (っ◔◡◔)っ ♥\n")
+    else:
+        print("\nyou lost!\n")
+    break
+
